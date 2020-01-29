@@ -163,8 +163,10 @@ function processContains(/* CODE HERE */item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  const noDuplicate = new Set(list);
+  return callback(Array.from(noDuplicate))
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -207,10 +209,9 @@ function getFullNames(/* CODE HERE */runners) {
 */
 function firstNamesAllCaps(/* CODE HERE */runners) {
   /* CODE HERE */
-let capFirstName = [];
-runners.map((runner, index) => {
-  capFirstName[index] = runner.first_name.toUpperCase();
-})
+let capFirstName = runners.map(function(runner) {
+  return runner.first_name.toUpperCase()
+});
 return capFirstName; 
 }
 
@@ -250,8 +251,7 @@ return wantShirt;
 */
 function tallyUpDonations(/* CODE HERE */runners) {
   /* CODE HERE */
-  let donationTotal = [];
-  donationTotal = runners.reduce((totalAmount, runner) => {
+  let donationTotal = runners.reduce((totalAmount, runner) => {
     return totalAmount + runner.donation;
 }, 0);
 return donationTotal;
