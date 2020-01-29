@@ -188,8 +188,8 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 function getFullNames(/* CODE HERE */runners) {
   /* CODE HERE */
   const fullName = [];
-  runners.forEach(function(item){
-    fullName.push(item.last_name + ", " + item.first_name);})
+  runners.forEach(function(runner){
+    fullName.push(runner.last_name + ", " + runner.first_name);})
     return fullName;
 }
 
